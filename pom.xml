@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.lippia</groupId>
 		<artifactId>root</artifactId>
-		<version>3.3.0.0</version>
+		<version>3.3.0.2</version>
 	</parent>
 
 	<groupId>Lippia-Web-Example-Project</groupId>
@@ -30,6 +30,10 @@
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
 		<cucumber.tags>@Smoke</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
+		<crowdar.cucumber.plugins>--plugin pretty --plugin com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter: --plugin com.crowdar.examples.listeners.CucumberListener:</crowdar.cucumber.plugins>
+		<crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
+		<crowdar.extent.environment>Local</crowdar.extent.environment>
+		<crowdar.extent.user.name>User.name</crowdar.extent.user.name>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
@@ -119,7 +123,7 @@
 		<dependency>
 			<groupId>io.lippia</groupId>
 			<artifactId>core</artifactId>
-			<version>3.3.0.0</version>
+			<version>3.3.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>io.lippia.report</groupId>
@@ -131,24 +135,7 @@
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
 			<version>1.1.0.10</version>
 		</dependency>
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>5.6.3</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.github.luben/zstd-jni -->
-		<dependency>
-			<groupId>com.github.luben</groupId>
-			<artifactId>zstd-jni</artifactId>
-			<version>1.5.5-11</version>
-		</dependency>
 	</dependencies>
 	<build>
 		<filters>
