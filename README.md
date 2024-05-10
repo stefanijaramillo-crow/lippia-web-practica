@@ -96,11 +96,28 @@ This sample project includes the required components as binaries, docker contain
 
   + ### Third Step
 
-    + To run the tests with maven, we must execute the following command:   
+  + To run the tests with maven, we must execute the following command:
 
+  ```
+  $ mvn clean test
+
+  ```
+  + Additional options are available in the following table:
     ```
-    $ mvn clean test
-    ```
+        * -D is used to define system properties or command-line properties, which Maven will utilize during the project's building and/or execution process.
+        * Using -P followed by the profile name allows Maven to apply the configurations associated with that specific profile during the project's build process.
+        * -Pparallel: indicates the profile that enables the opening of multiple execution threads.
+        * -PchromeHeadless: indicates the profile that runs in headless mode, meaning it does not open the browser.
+
+
+           |                                      Command                                               |                    Description                  |
+           |--------------------------------------------------------------------------------------------|-------------------------------------------------|
+           | mvn clean test -DforkCount=0                                                               | in case you need to debug                       |
+           | mvn clean test -DforkCount=0  "-Dcucumber.tags=@Smoke"                                     | specifying a tag and including the debug option |
+           | mvn clean test -Pparallel -PchromeHeadless -Plocal                                         | Multiple profiles enabled                       |
+           | mvn clean test -PLocal -PchromeHeadless "-Dcucumber.tags=@Accounts and @Regression"        | Multiple tags and profiles enabled              |
+  ```
+
 
 - ## Running with Docker
 
@@ -448,14 +465,14 @@ Feature: As a potential client i need to search in google to find a web site
 
 The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
 
-|**Attribute** | **Description** | 
-|--------------|-----------------| 
-|name   | The name of this suite. It is a **mandatory** attribute. |  
-|verbose   | Whether TestNG should run different threads to run this suite. |  
-|parallel   | Whether TestNG should run different threads to run this suite. |
-|thread-count   | The number of threads to use, if parallel mode is enabled (ignored other-wise). |  
-|annotations   | The type of annotations you are using in your tests. |  
-|time-out   | The default timeout that will be used on all the test methods found in this test. |  
+| **Attribute**   | **Description**                                                                   | 
+|-----------------|-----------------------------------------------------------------------------------| 
+| name            | The name of this suite. It is a **mandatory** attribute.                          |  
+| verbose         | Whether TestNG should run different threads to run this suite.                    |  
+| parallel        | Whether TestNG should run different threads to run this suite.                    |
+| thread-count    | The number of threads to use, if parallel mode is enabled (ignored other-wise).   |  
+| annotations     | The type of annotations you are using in your tests.                              |  
+| time-out        | The default timeout that will be used on all the test methods found in this test. |  
 
 ### testngSecuencial.xml  
 
