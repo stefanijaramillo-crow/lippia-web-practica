@@ -102,7 +102,7 @@ This sample project includes the required components as binaries, docker contain
   $ mvn clean test
 
   ```
-  + Additional options are available in the following table:
+  + Additionally, other options are available for running the tests, as outlined in the following table:
     ```
         * -D is used to define system properties or command-line properties, which Maven will utilize during the project's building and/or execution process.
         * Using -P followed by the profile name allows Maven to apply the configurations associated with that specific profile during the project's build process.
@@ -110,12 +110,12 @@ This sample project includes the required components as binaries, docker contain
         * -PchromeHeadless: indicates the profile that runs in headless mode, meaning it does not open the browser.
 
 
-           |                                      Command                                               |                    Description                  |
-           |--------------------------------------------------------------------------------------------|-------------------------------------------------|
-           | mvn clean test -DforkCount=0                                                               | in case you need to debug                       |
-           | mvn clean test -DforkCount=0  "-Dcucumber.tags=@Smoke"                                     | specifying a tag and including the debug option |
-           | mvn clean test -Pparallel -PchromeHeadless -Plocal                                         | Multiple profiles enabled                       |
-           | mvn clean test -PLocal -PchromeHeadless "-Dcucumber.tags=@Accounts and @Regression"        | Multiple tags and profiles enabled              |
+           |                                   Command                                              |                        Description                             |
+           |----------------------------------------------------------------------------------------|----------------------------------------------------------------|
+           | mvn clean test -DforkCount=0                                                           | In case you need to debug, for use in the IDE runner           |
+           | mvn clean test -DforkCount=0  "-Dcucumber.tags=@Smoke"                                 | Specifying a tag and including the debug option                |
+           | mvn clean test -Pparallel -PchromeHeadless -Plocal                                     | Multiple profiles enabled                                      |
+           | mvn clean test -PLocal -PchromeHeadless "-Dcucumber.tags=@Accounts and @Regression"    | Multiple tags and profiles enabled                             |
   ```
 
 
