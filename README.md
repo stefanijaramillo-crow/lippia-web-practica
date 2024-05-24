@@ -528,3 +528,15 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
 ```
         <runner>testngParallel.xml</runner>
 ```        
+### How to avoid data concurrency:
+
+- In our Lippia core we have a class called **MyThreadLocal** which allows us to save variables in independent threads for each execution. This functionality provides us with the solution to data concurrency in parallel executions.
+
+Use the setData() method to save our variables:
+```
+MyThreadLocal.setData(key, value)
+```
+Use the getData() method to obtain the value of our variable saved in our thread:
+```
+MyThreadLocal.getData(key)
+``` 
