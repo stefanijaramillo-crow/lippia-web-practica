@@ -465,14 +465,14 @@ Feature: As a potential client i need to search in google to find a web site
 
 The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
 
-| **Attribute**   | **Description**                                                                   | 
-|-----------------|-----------------------------------------------------------------------------------| 
-| name            | The name of this suite. It is a **mandatory** attribute.                          |  
-| verbose         | Whether TestNG should run different threads to run this suite.                    |  
-| parallel        | Whether TestNG should run different threads to run this suite.                    |
-| thread-count    | The number of threads to use, if parallel mode is enabled (ignored other-wise).   |  
-| annotations     | The type of annotations you are using in your tests.                              |  
-| time-out        | The default timeout that will be used on all the test methods found in this test. |  
+    | **Attribute**                     | **Description**                                                                   | 
+    |-----------------------------------|-----------------------------------------------------------------------------------| 
+    | name                              | The name of this suite. It is a **mandatory** attribute.                          |  
+    | verbose                           | Whether TestNG should run different threads to run this suite.                    |  
+    | parallel                          | Whether TestNG should run different threads to run this suite.                    |
+    | thread-count                      | The number of threads to use, if parallel mode is enabled (ignored other-wise).   |  
+    | annotations                       | The type of annotations you are using in your tests.                              |  
+    | time-out                          | The default timeout that will be used on all the test methods found in this test. |  
 
 ### testngSecuencial.xml  
 
