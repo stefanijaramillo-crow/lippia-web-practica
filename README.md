@@ -465,14 +465,14 @@ Feature: As a potential client i need to search in google to find a web site
 
 The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
 
-| **Attribute**   | **Description**                                                                   | 
-|-----------------|-----------------------------------------------------------------------------------| 
-| name            | The name of this suite. It is a **mandatory** attribute.                          |  
-| verbose         | Whether TestNG should run different threads to run this suite.                    |  
-| parallel        | Whether TestNG should run different threads to run this suite.                    |
-| thread-count    | The number of threads to use, if parallel mode is enabled (ignored other-wise).   |  
-| annotations     | The type of annotations you are using in your tests.                              |  
-| time-out        | The default timeout that will be used on all the test methods found in this test. |  
+    | **Attribute**                     | **Description**                                                                   | 
+    |-----------------------------------|-----------------------------------------------------------------------------------| 
+    | name                              | The name of this suite. It is a **mandatory** attribute.                          |  
+    | verbose                           | Whether TestNG should run different threads to run this suite.                    |  
+    | parallel                          | Whether TestNG should run different threads to run this suite.                    |
+    | thread-count                      | The number of threads to use, if parallel mode is enabled (ignored other-wise).   |  
+    | annotations                       | The type of annotations you are using in your tests.                              |  
+    | time-out                          | The default timeout that will be used on all the test methods found in this test. |  
 
 ### testngSecuencial.xml  
 
@@ -528,3 +528,15 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
 ```
         <runner>testngParallel.xml</runner>
 ```        
+### How to avoid data concurrency:
+
+- In our Lippia core we have a class called **MyThreadLocal** which allows us to save variables in independent threads for each execution. This functionality provides us with the solution to data concurrency in parallel executions.
+
+Use the setData() method to save our variables:
+```
+MyThreadLocal.setData(key, value)
+```
+Use the getData() method to obtain the value of our variable saved in our thread:
+```
+MyThreadLocal.getData(key)
+``` 
