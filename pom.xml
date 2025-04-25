@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.lippia</groupId>
 		<artifactId>root</artifactId>
-		<version>3.3.0.2</version>
+		<version>3.3.0.3</version>
 	</parent>
 
 	<groupId>Lippia-Web-Example-Project</groupId>
@@ -18,7 +18,7 @@
 		<maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<!-- defult configuration chrome local -->
+		<!-- default configuration chrome local -->
 		<crowdar.projectType></crowdar.projectType>
 		<crowdar.driver.capabilities.json_path></crowdar.driver.capabilities.json_path>
 		<crowdar.setupStrategy></crowdar.setupStrategy>
